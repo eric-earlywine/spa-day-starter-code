@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<div th:if="${newUser}">
+<h1 th:text="${'Welcome to the club ' + newUser + '!'}">Welcome!</h1>
+    <p>Please feel free to select one of our <a th:href="@{/}">spa services!</a></p>
+</div>
+<div th:if="${specUser}">
+    <p>Username: <span th:text="${specUser.username}"></span></p>
+    <p>E-mail: <span th:text="${specUser.email}"></span></p>
+</div>
+<div>
+    <h1>All users</h1>
+    <ul>
+        <li th:each="use : ${users}"><a th:href="@{${'user/' + use.getId()}}" th:text="${use}"></a></li>
+    </ul>
+</div>
+</body>
+</html>

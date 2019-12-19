@@ -24,3 +24,7 @@ table {
             padding: 10px;
             text-align: center;
 }
+.warning {
+    color: red;
+    font-weight: bold;
+}
